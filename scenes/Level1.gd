@@ -9,8 +9,8 @@ var yellow_light: bool = false
 var red_light: bool = false 
 
 var GREEN_LIGHT_INTERVAL: float = randi() % 5 
-const YELLOW_LIGHT_INTERVAL: float = 2.0 
-const RED_LIGHT_INTERVAL: float = 3.0 
+const YELLOW_LIGHT_INTERVAL: float = 1.0 
+const RED_LIGHT_INTERVAL: float = 4.0 
 
 var green_light_time: float = 0.0 
 var yellow_light_time: float = 0.0 
