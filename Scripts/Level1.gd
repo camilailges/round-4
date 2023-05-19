@@ -20,7 +20,7 @@ var player : KinematicBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player = get_node("YSort/Player")
+	player = get_node("Player")
 
 func _process(delta: float) -> void:
 	
@@ -41,9 +41,10 @@ func _process(delta: float) -> void:
 		yellow_light_time = 0.0
 		
 	if red_light:
-		if player != null and player.velocity != Vector2.ZERO:
-			player.animation.play("idle")
-			# player.queue_free()
+		player = get_node("Player")
+		if player.velocity != Vector2.ZERO:
+			player.get
+			player.animation.play("death")
 		red_light_time += delta
 		if red_light_time >= RED_LIGHT_INTERVAL:
 			red_light = false
