@@ -41,14 +41,13 @@ func _process(delta: float) -> void:
 		
 	if red_light:
 		if player.velocity != null and player.velocity != Vector2.ZERO:
-			#player.animation.play("idle")
-			player.queue_free()
-			get_tree().paused = true
+			player.sprite.visible=false
 			
 		red_light_time += delta
 		if red_light_time >= RED_LIGHT_INTERVAL:
 			red_light = false
 			red_light_time = 0.0
+			player.sprite.visible=true
 			
 	green_light_label.text = "Green Light: " + str(round(green_light_time))
 	red_light_label.text = "Red Light: " + str(round(red_light_time))
