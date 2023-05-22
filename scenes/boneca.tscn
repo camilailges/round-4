@@ -34,7 +34,7 @@ tracks/0/keys = {
 "values": [ 4, 16, 40 ]
 }
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Boneca" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
