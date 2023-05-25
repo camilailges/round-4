@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/base_terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,38 @@
 [ext_resource path="res://scenes/objetos/Arvore.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/objetos/TocoArvore.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/objetos/PedraPequena.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/Finish-Line-PNG-HD.png" type="Texture" id=7]
+[ext_resource path="res://scenes/GirlBot.tscn" type="PackedScene" id=8]
+
+[sub_resource type="TileSet" id=1]
+0/name = "Finish-Line-PNG-HD.png 0"
+0/texture = ExtResource( 7 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 176, 192, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "Finish-Line-PNG-HD.png 1"
+1/texture = ExtResource( 7 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 144, 192, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 3 )
@@ -57,6 +89,9 @@ position = Vector2( -91, -42 )
 [node name="PedraPequena4" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 381, -33 )
 
+[node name="GirlBot" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -128, -240 )
+
 [node name="GreenLightLabel" type="Label" parent="."]
 margin_left = 32.0
 margin_top = 192.0
@@ -77,3 +112,9 @@ margin_top = 224.0
 margin_right = 92.0
 margin_bottom = 238.0
 text = "Red light:"
+
+[node name="LinhaChegada" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 56, 0, 0, 57, 1, 0, 65592, 1, 0, 65593, 0, 0, 131128, 0, 0, 131129, 1, 0, 196664, 1, 0, 196665, 0, 0, 262200, 0, 0, 262201, 1, 0, 327736, 1, 0, 327737, 0, 0, 393272, 0, 0, 393273, 1, 0, 458808, 1, 0, 458809, 0, 0 )
