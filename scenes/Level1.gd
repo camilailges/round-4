@@ -16,6 +16,8 @@ var green_light_time: float = 0.0
 var yellow_light_time: float = 0.0 
 var red_light_time: float = 0.0
 
+enum {redLight, greenLight, yellowLight}
+
 var player : KinematicBody2D
 var bot : KinematicBody2D
 
