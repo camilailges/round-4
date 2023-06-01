@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
-onready var animation: AnimatedSprite = get_node("Animation")
+onready var animation: AnimatedSprite = get_node("AnimatedSprite")
 onready var sprite: Sprite = get_node("Sprite")
 
 var velocity: Vector2
 
-export(int) var speed = 50
+export(int) var speed = 1
 
 func _physics_process(_delta: float) -> void:
 	move()
@@ -13,27 +13,49 @@ func _physics_process(_delta: float) -> void:
 	animate()
 	
 func move() -> void:
+	var passou = false
 	velocity.x = speed
-	velocity = move_and_slide(velocity)
-	
+#	velocity = move_and_slide(velocity)
+	var collision = move_and_collide(velocity)
+
+	if collision:
+#		passou = true
+		#var collidedObject = collision.collider
+		#if collidedObject.name == "Arvore2":  # Replace "Tree" with the actual name of your tree object
+			# Calculate new direction by rotating the current direction 90 degrees
+		var newDirection = velocity.rotated(90)
+		#animation.play("walkingDown")
+		#print("entrou")
+		velocity = newDirection.normalized() * speed  # Normalize the vector to maintain the original speed
+		move_and_collide(velocity)
+		#var newDirection2 = velocity.rotated(90)
+		#animation.play("walkingDown")
+#		print("entrou")
+#		velocity = newDirection2.normalized() * speed  # Normalize the vector to maintain the original speed
+#		move_and_collide(velocity)
+
+
 func animate() -> void:
 	if velocity != Vector2.ZERO:
 		if velocity.x != 0:
-			$AnimatedSprite.play("walkingSideways")
+			animation.play("walkingSideways")
 		else:			
 			if velocity.y > 0:
-				$AnimatedSprite.play("walkingDown")
+				animation.play("walkingDown")
 			elif velocity.y < 0:
-				$AnimatedSprite.play("walkingUp")
+				animation.play("walkingUp")
 	else:
 		animation.stop()
 				
 func verifyDirection() -> void:
 	if velocity.x > 0:
-		$AnimatedSprite.flip_h = false
+		animation.flip_h = false
 	elif velocity.x < 0:
-		$AnimatedSprite.flip_h = true
+		animation.flip_h = true
 
+#func _on_detection_area_body_entered(body) -> void:
+#	print("entrou")
+#	animation.play("walkingDown")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
