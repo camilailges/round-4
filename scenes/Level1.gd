@@ -44,8 +44,8 @@ func _process(delta: float) -> void:
 		yellow_light_time = 0.0
 		
 	if red_light:
-		if bot.velocity != null and bot.velocity != Vector2.ZERO:
-			bot.animation.visible = false
+#		if bot.velocity != null and bot.velocity != Vector2.ZERO:
+#			bot.animation.visible = false
 		if player.velocity != null and player.velocity != Vector2.ZERO:
 			player.sprite.visible=false
 			
