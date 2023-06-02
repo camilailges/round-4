@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/base_terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -43,6 +43,16 @@
 vertices = PoolVector2Array( 1012, 584, 7, 590, 10, 331, 729, 387, 243, 28, 244, 140, 6, 138, 5, 10, 1014, 10, 305, 27, 727, 332, 806, 387, 806, 151, 306, 155, 303, 91 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 4, 7, 8, 9 ), PoolIntArray( 2, 10, 3 ), PoolIntArray( 0, 3, 11 ), PoolIntArray( 8, 0, 11, 12 ), PoolIntArray( 9, 8, 12, 13, 14 ) ]
 outlines = [ PoolVector2Array( 5, 10, 1014, 10, 1012, 584, 7, 590, 10, 331, 727, 332, 729, 387, 806, 387, 806, 151, 306, 155, 303, 91, 305, 27, 243, 28, 244, 140, 6, 138 ) ]
+
+[sub_resource type="NavigationPolygon" id=3]
+vertices = PoolVector2Array( 274, 220, 236, 222, 258, 192, 252, 150, 247, 84, 301, 85, 299, 158, 377, 156, 377, 235, 321, 235, 275, 253, 321, 277, 357, 277, 356, 328, 127, 327, 128, 288, 235, 252, 86, 327, 9, 328, 8, 142, 87, 289, 207, 142, 209, 208, 238, 208 )
+polygons = [ PoolIntArray( 0, 1, 2 ), PoolIntArray( 3, 4, 5, 6, 2 ), PoolIntArray( 2, 6, 7, 8, 9, 0 ), PoolIntArray( 10, 0, 9, 11 ), PoolIntArray( 12, 13, 14, 15, 11 ), PoolIntArray( 10, 11, 15, 16 ), PoolIntArray( 17, 18, 19, 20 ), PoolIntArray( 20, 19, 21, 22, 15 ), PoolIntArray( 16, 15, 22, 23 ) ]
+outlines = [ PoolVector2Array( 8, 142, 9, 328, 86, 327, 87, 289, 128, 288, 127, 327, 356, 328, 357, 277, 321, 277, 321, 235, 377, 235, 377, 156, 299, 158, 301, 85, 247, 84, 252, 150, 258, 192, 236, 222, 274, 220, 275, 253, 235, 252, 238, 208, 209, 208, 207, 142 ) ]
+
+[sub_resource type="NavigationPolygon" id=4]
+vertices = PoolVector2Array( 387, 277, 360, 277, 380, 236, 430, 238, 729, 333, 527, 331, 538, 266, 572, 271, 527, 332, 359, 338, 359, 318, 387, 317, 432, 175, 382, 176, 382, 157, 530, 158, 529, 196, 590, 156, 800, 158, 800, 330, 588, 196, 573, 238, 542, 236 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 4, 5, 6, 7 ), PoolIntArray( 8, 9, 10, 11 ), PoolIntArray( 12, 13, 14, 15 ), PoolIntArray( 12, 15, 16, 3 ), PoolIntArray( 17, 18, 19, 4, 20 ), PoolIntArray( 20, 4, 7, 21 ), PoolIntArray( 16, 20, 21, 22 ), PoolIntArray( 0, 3, 16, 22, 8, 11 ) ]
+outlines = [ PoolVector2Array( 729, 333, 800, 330, 800, 158, 590, 156, 588, 196, 529, 196, 530, 158, 382, 157, 382, 176, 432, 175, 430, 238, 380, 236, 360, 277, 387, 277, 387, 317, 359, 318, 359, 338, 527, 332, 542, 236, 573, 238, 572, 271, 538, 266, 527, 331 ) ]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 3 )
@@ -128,7 +138,13 @@ text = "Red light:"
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 navpoly = SubResource( 2 )
 
+[node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 3 )
+
 [node name="GirlBot" parent="Navigation2D" instance=ExtResource( 8 )]
 position = Vector2( 48, 48 )
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="Navigation2D/GirlBot"]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="."]
+navpoly = SubResource( 4 )
