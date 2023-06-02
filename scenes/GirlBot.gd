@@ -76,7 +76,7 @@ var velocity: Vector2
 export(int) var speed = 90
 
 func _ready() -> void:
-	agent.set_target_location(Vector2(970, self.global_position.y))
+	agent.set_target_location(Vector2(970, 548))
 	
 func _physics_process(delta: float) -> void:
 	var direction := global_position.direction_to(agent.get_next_location())
