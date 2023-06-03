@@ -5,6 +5,8 @@ onready var green_light_label: Label = get_node("GreenLightLabel")
 onready var yellow_light_label: Label = get_node("YellowLightLabel")
 onready var red_light_label: Label = get_node("RedLightLabel")
 
+const GameOverScreen = preload("res://Scripts/GameOverScreen.gd")
+
 var yellow_light: bool = false
 var red_light: bool = false 
 
@@ -47,7 +49,7 @@ func _process(delta: float) -> void:
 #		if bot.velocity != null and bot.velocity != Vector2.ZERO:
 #			bot.animation.visible = false
 		if player.velocity != null and player.velocity != Vector2.ZERO:
-			player.sprite.visible=false
+			get_tree().change_scene("res://scenes/GameOverScreen.tscn")
 			
 		red_light_time += delta
 		if red_light_time >= RED_LIGHT_INTERVAL:
@@ -58,7 +60,18 @@ func _process(delta: float) -> void:
 	green_light_label.text = "Green Light: " + str(round(green_light_time))
 	red_light_label.text = "Red Light: " + str(round(red_light_time))
 	yellow_light_label.text = "Yellow Light: " + str(round(yellow_light_time))
-
+	
+	if player.global_position.x > 930:
+		get_tree().change_scene("res://scenes/WinScreen.tscn")
+		
+#func win():
+#	get_tree().change_scene("res://scenes/WinScreen.tscn")
+#	var game_over = GameOverScreen.instance()
+#	add_child(game_over)
+#
+#func lose():
+#	var game_over = GameOverScreen.instance()
+#	add_child(game_over)
 
 
 

@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 onready var animation: AnimationPlayer = get_node("Animation")
 onready var sprite: Sprite = get_node("Sprite")
+onready var level1 = get_tree().get_root().get_node("Level1")
 
 var velocity: Vector2
 
@@ -11,6 +12,8 @@ func _physics_process(_delta: float) -> void:
 	move()
 	verifyDirection()
 	animate()
+#	print(level1.get("yellow_light"))
+#	print(level1.get("red_light"))
 	
 func move() -> void:
 	var directionVector: Vector2 = Vector2(
@@ -19,6 +22,8 @@ func move() -> void:
 	).normalized()
 	velocity = directionVector * speed
 	velocity = move_and_slide(velocity)
+	if directionVector != Vector2.ZERO and level1.get("red_light"):
+		var _reload: bool = get_tree().reload_current_scene()
 	
 func animate() -> void:
 	if velocity != Vector2.ZERO:
