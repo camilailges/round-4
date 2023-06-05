@@ -5,8 +5,12 @@ onready var agent: NavigationAgent2D = $GirlBot
 onready var tombSprite: Sprite = get_node("TombSprite")
 
 var velocity: Vector2
-export(int) var speed = 30
+var botSpeed: int = 30
+export(int) var speed = botSpeed
 export(int) var botRan
+
+var stopped = false
+
 
 func _ready() -> void:
 	agent.set_target_location(Vector2(970, 400))
@@ -34,6 +38,13 @@ func animate() -> void:
 				animation.play("walkingUp")
 	else:
 		animation.stop()
+		
+func stop() -> void:
+	speed = 0
+	
+func resume() -> void:
+	speed = botSpeed
+
 		
 func kill() -> void:
 	animation.visible = false
