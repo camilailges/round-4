@@ -1,9 +1,7 @@
 extends Node2D
 
 
-onready var green_light_label: Label = get_node("GreenLightLabel")
-onready var yellow_light_label: Label = get_node("YellowLightLabel")
-onready var red_light_label: Label = get_node("RedLightLabel")
+
 
 var yellow_light: bool = false
 var red_light: bool = false 
@@ -33,6 +31,9 @@ var player : KinematicBody2D
 
 var bot1 : KinematicBody2D
 var bot2: KinematicBody2D
+var bot3: KinematicBody2D
+var bot4: KinematicBody2D
+
 var bots := []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,9 +41,14 @@ func _ready() -> void:
 	
 	bot1 = get_node("Navigation2D/GirlBot")
 	bot2 = get_node("Navigation2D/Bot2")
+	bot3 = get_node("Navigation2D/Bot3")
+	bot4 = get_node("Navigation2D/Bot4")
 	
 	bots.append(bot1)
 	bots.append(bot2)
+	bots.append(bot3)
+	bots.append(bot4)
+	
 	
 	light_label = get_node("LightLabel")
 	green_light_label_sprite = light_label.get_node("GreenLightSprite")
@@ -105,9 +111,7 @@ func _process(delta: float) -> void:
 	if player.global_position.x > 930:
 		get_tree().change_scene("res://scenes/WinScreen.tscn")
 	
-	green_light_label.text = "Green Light: " + str(round(green_light_time))
-	red_light_label.text = "Red Light: " + str(round(red_light_time))
-	yellow_light_label.text = "Yellow Light: " + str(round(yellow_light_time))
+
 
 
 

@@ -1,18 +1,18 @@
 extends KinematicBody2D
 #
 onready var animation: AnimatedSprite = get_node("AnimatedSprite")
-onready var agent: NavigationAgent2D = $Bot2
+onready var agent: NavigationAgent2D = $Bot4
 onready var tombSprite: Sprite = get_node("TombSprite")
 
 var velocity: Vector2
-var botSpeed = 60
+var botSpeed = 75
 export(int) var speed = botSpeed
 export(int) var botRan
 
 var stopped = false
 
 func _ready() -> void:
-	agent.set_target_location(Vector2(970, 100))
+	agent.set_target_location(Vector2(970, 560))
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	botRan = rng.randi_range(1, 4)
