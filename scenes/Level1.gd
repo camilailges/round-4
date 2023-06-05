@@ -18,6 +18,11 @@ var red_light_time: float = 0.0
 
 enum {redLight, greenLight, yellowLight}
 
+var light_label
+var green_light_label_sprite
+var yellow_light_label_sprite
+var red_light_label_sprite
+
 var player : KinematicBody2D
 var bot : KinematicBody2D
 
@@ -25,8 +30,19 @@ var bot : KinematicBody2D
 func _ready() -> void:
 	player = get_node("YSort/Player")
 	bot = get_node("YSort/GirlBot")
+	light_label = get_node("LightLabel")
+	green_light_label_sprite = light_label.get_node("GreenLightSprite")
+	yellow_light_label_sprite = light_label.get_node("YellowLightSprite")
+	red_light_label_sprite = light_label.get_node("RedLightSprite")
+	update_lights()
+
+func update_lights():
+	green_light_label_sprite.visible = !red_light and !yellow_light
+	yellow_light_label_sprite.visible = yellow_light
+	red_light_label_sprite.visible = red_light
 
 func _process(delta: float) -> void:
+	update_lights()
 	if not red_light and not yellow_light:
 		green_light_time += delta
 		
