@@ -31,6 +31,7 @@ var bot1 : KinematicBody2D
 var bot2: KinematicBody2D
 var bot3: KinematicBody2D
 var bot4: KinematicBody2D
+var bot5: KinematicBody2D
 
 var bots := []
 # Called when the node enters the scene tree for the first time.
@@ -41,12 +42,14 @@ func _ready() -> void:
 	bot2 = get_node("Navigation2D/Bot2")
 	bot3 = get_node("Navigation2D/Bot3")
 	bot4 = get_node("Navigation2D/Bot4")
+	bot5 = get_node("Navigation2D/Bot5")
 	
 	bots.append(bot1)
 	bots.append(bot2)
 	bots.append(bot3)
 	bots.append(bot4)
-	
+	bots.append(bot5)
+
 	
 	light_label = get_node("LightLabel")
 	green_light_label_sprite = light_label.get_node("GreenLightSprite")

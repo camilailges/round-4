@@ -5,7 +5,7 @@ onready var agent: NavigationAgent2D = $Bot3
 onready var tombSprite: Sprite = get_node("TombSprite")
 
 var velocity: Vector2
-var botSpeed = 40
+var botSpeed = 75
 export(int) var speed = botSpeed
 export(int) var botRan
 
