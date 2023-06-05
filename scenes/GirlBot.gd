@@ -73,10 +73,14 @@ onready var sprite: Sprite = get_node("Sprite")
 onready var agent: NavigationAgent2D = $GirlBot
 
 var velocity: Vector2
-export(int) var speed = 90
+export(int) var speed = 30
+export(int) var botRan
 
 func _ready() -> void:
 	agent.set_target_location(Vector2(970, 400))
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	botRan = rng.randi_range(1, 4)
 	
 func _physics_process(delta: float) -> void:
 	if agent.is_navigation_finished():

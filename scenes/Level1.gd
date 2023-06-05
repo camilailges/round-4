@@ -23,13 +23,16 @@ var green_light_label_sprite
 var yellow_light_label_sprite
 var red_light_label_sprite
 
+var qtdVermelhos = 0
+var botParou = false
+
 var player : KinematicBody2D
 var bot : KinematicBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_node("YSort/Player")
-	bot = get_node("YSort/GirlBot")
+	bot = get_node("Navigation2D/GirlBot")
 	light_label = get_node("LightLabel")
 	green_light_label_sprite = light_label.get_node("GreenLightSprite")
 	yellow_light_label_sprite = light_label.get_node("YellowLightSprite")
@@ -58,10 +61,18 @@ func _process(delta: float) -> void:
 		red_light = true
 		yellow_light = false
 		yellow_light_time = 0.0
-		
+		qtdVermelhos += 1
+	
+	if !yellow_light && !red_light && botParou == true:
+		bot.speed = 30
+
 	if red_light:
-#		if bot.velocity != null and bot.velocity != Vector2.ZERO:
-#			bot.animation.visible = false
+		if qtdVermelhos != bot.botRan:
+			bot.speed = 0
+			botParou = true
+		else:
+			bot.animation.visible = false
+			
 		if player.velocity != null and player.velocity != Vector2.ZERO:
 			player.sprite.visible=false
 			
