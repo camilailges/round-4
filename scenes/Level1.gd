@@ -92,7 +92,7 @@ func _process(delta: float) -> void:
 			if qtdVermelhos != bot.botRan:
 				bot.stop()
 				bot.stopped = true
-			else:
+			elif !bot.won:
 				bot.kill()
 			
 
@@ -103,13 +103,18 @@ func _process(delta: float) -> void:
 			red_light_time = 0.0
 			player.sprite.visible=true
 	
-	if game_time_count >= 15:
+	if game_time_count >= 30:
 			get_tree().change_scene("res://scenes/GameOverScreen.tscn")
 	
 	game_time_count += delta
 	
 	if player.global_position.x > 930:
 		get_tree().change_scene("res://scenes/WinScreen.tscn")
+	
+	for bot in bots:
+		if bot.global_position.x > 950:
+			bot.won = true
+			bot.stop()
 	
 
 

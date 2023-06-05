@@ -10,6 +10,7 @@ export(int) var speed = botSpeed
 export(int) var botRan
 
 var stopped = false
+var won = false
 
 func _ready() -> void:
 	agent.set_target_location(Vector2(970, 560))
