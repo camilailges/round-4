@@ -26,7 +26,7 @@ var bot : KinematicBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_node("YSort/Player")
-	bot = get_node("YSort/GirlBot")
+	bot = get_node("Navigation2D/GirlBot")
 
 func _process(delta: float) -> void:
 	if not red_light and not yellow_light:

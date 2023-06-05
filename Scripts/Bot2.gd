@@ -1,13 +1,13 @@
 extends KinematicBody2D
 #
 onready var animation: AnimatedSprite = get_node("AnimatedSprite")
-onready var agent: NavigationAgent2D = $GirlBot
+onready var agent: NavigationAgent2D = $Bot2
 
 var velocity: Vector2
 export(int) var speed = 90
 
 func _ready() -> void:
-	agent.set_target_location(Vector2(970, 400))
+	agent.set_target_location(Vector2(970, 100))
 	
 func _physics_process(delta: float) -> void:
 	if agent.is_navigation_finished():
