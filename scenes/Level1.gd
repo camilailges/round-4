@@ -12,6 +12,9 @@ var GREEN_LIGHT_INTERVAL: float = randi() % 5
 const YELLOW_LIGHT_INTERVAL: float = 1.0 
 const RED_LIGHT_INTERVAL: float = 4.0 
 
+const GAME_TIME: float = 10.0
+var game_time_count: float = 0.0
+
 var green_light_time: float = 0.0 
 var yellow_light_time: float = 0.0 
 var red_light_time: float = 0.0
@@ -81,7 +84,13 @@ func _process(delta: float) -> void:
 			red_light = false
 			red_light_time = 0.0
 			player.sprite.visible=true
-			
+	
+	if game_time_count >= 15:
+		player.queue_free()
+		get_tree().paused = true
+	
+	game_time_count += delta
+	
 	green_light_label.text = "Green Light: " + str(round(green_light_time))
 	red_light_label.text = "Red Light: " + str(round(red_light_time))
 	yellow_light_label.text = "Yellow Light: " + str(round(yellow_light_time))
