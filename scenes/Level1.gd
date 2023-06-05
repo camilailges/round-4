@@ -74,10 +74,10 @@ func _process(delta: float) -> void:
 			bot.speed = 0
 			botParou = true
 		else:
-			bot.animation.visible = false
+			bot.kill()
 			
 		if player.velocity != null and player.velocity != Vector2.ZERO:
-			player.sprite.visible=false
+			get_tree().change_scene("res://scenes/GameOverScreen.tscn")
 			
 		red_light_time += delta
 		if red_light_time >= RED_LIGHT_INTERVAL:
@@ -86,10 +86,12 @@ func _process(delta: float) -> void:
 			player.sprite.visible=true
 	
 	if game_time_count >= 15:
-		player.queue_free()
-		get_tree().paused = true
+			get_tree().change_scene("res://scenes/GameOverScreen.tscn")
 	
 	game_time_count += delta
+	
+	if player.global_position.x > 930:
+		get_tree().change_scene("res://scenes/WinScreen.tscn")
 	
 	green_light_label.text = "Green Light: " + str(round(green_light_time))
 	red_light_label.text = "Red Light: " + str(round(red_light_time))
