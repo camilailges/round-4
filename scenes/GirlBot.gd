@@ -17,7 +17,7 @@ func _ready() -> void:
 	agent.set_target_location(Vector2(970, 400))
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	botRan = rng.randi_range(1, 4)
+	botRan = rng.randi_range(1, 12)
 	
 func _physics_process(delta: float) -> void:
 	if agent.is_navigation_finished():

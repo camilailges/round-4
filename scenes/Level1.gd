@@ -1,7 +1,6 @@
 extends Node2D
 
-
-
+onready var time_label: Label = get_node("TimeLabel")
 
 var yellow_light: bool = false
 var red_light: bool = false 
@@ -10,7 +9,6 @@ var GREEN_LIGHT_INTERVAL: float = randi() % 5
 const YELLOW_LIGHT_INTERVAL: float = 1.0 
 const RED_LIGHT_INTERVAL: float = 4.0 
 
-const GAME_TIME: float = 10.0
 var game_time_count: float = 0.0
 
 var green_light_time: float = 0.0 
@@ -89,7 +87,7 @@ func _process(delta: float) -> void:
 		if player.velocity != null and player.velocity != Vector2.ZERO:
 			get_tree().change_scene("res://scenes/GameOverScreen.tscn")
 		for bot in bots:
-			if qtdVermelhos != bot.botRan:
+			if qtdVermelhos != bot.botRan: 
 				bot.stop()
 				bot.stopped = true
 			elif !bot.won:
@@ -103,7 +101,7 @@ func _process(delta: float) -> void:
 			red_light_time = 0.0
 			player.sprite.visible=true
 	
-	if game_time_count >= 30:
+	if game_time_count >= 45:
 			get_tree().change_scene("res://scenes/GameOverScreen.tscn")
 	
 	game_time_count += delta
@@ -115,6 +113,8 @@ func _process(delta: float) -> void:
 		if bot.global_position.x > 950:
 			bot.won = true
 			bot.stop()
+	
+	time_label.text = "Tempo restante: " + str(round(45 - game_time_count))
 	
 
 

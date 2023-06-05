@@ -172,3 +172,9 @@ texture = ExtResource( 9 )
 position = Vector2( 81, 53 )
 scale = Vector2( 2.09375, 2 )
 texture = ExtResource( 11 )
+
+[node name="TimeLabel" type="Label" parent="."]
+margin_left = 17.0
+margin_top = 9.0
+margin_right = 122.0
+margin_bottom = 28.0
