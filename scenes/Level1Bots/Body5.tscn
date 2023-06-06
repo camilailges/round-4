@@ -74,4 +74,6 @@ shape = SubResource( 11 )
 
 [node name="TombSprite" type="Sprite" parent="."]
 visible = false
+position = Vector2( -2.38419e-07, 3 )
+scale = Vector2( 0.0507812, 0.0507812 )
 texture = ExtResource( 3 )
