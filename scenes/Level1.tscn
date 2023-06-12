@@ -116,13 +116,13 @@ position = Vector2( 24, 119 )
 [node name="Bot5" type="NavigationAgent2D" parent="Navigation2D/Bot5"]
 
 [node name="YSort" type="YSort" parent="."]
-position = Vector2( 176, 288 )
+position = Vector2( 210, 294 )
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( -146, 21 )
+position = Vector2( -183, 18 )
 
 [node name="Arvore" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 58, -124 )
+position = Vector2( 8, 63 )
 
 [node name="Arvore2" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 96, -240 )
@@ -130,34 +130,97 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="Arvore3" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 229, -91 )
+position = Vector2( 129, -47 )
 
 [node name="Arvore4" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 593, 65 )
+position = Vector2( 385, -121 )
 
 [node name="Arvore5" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 386, -129 )
+position = Vector2( 34, 255 )
+
+[node name="Arvore6" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 225, 176 )
 
 [node name="TocoArvore" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( -69, 22 )
+position = Vector2( 481, 42 )
 
 [node name="TocoArvore2" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 79, -53 )
+position = Vector2( 507, -59 )
 
 [node name="TocoArvore3" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 171, -31 )
+position = Vector2( 343, 46 )
 
 [node name="PedraPequena" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 197, 10 )
+position = Vector2( 427, -218 )
 
 [node name="PedraPequena2" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( -14, -70 )
+position = Vector2( -23, -75 )
 
 [node name="PedraPequena3" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( -91, -42 )
+position = Vector2( -69, 23 )
 
 [node name="PedraPequena4" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 381, -33 )
+
+[node name="Arvore7" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 510, 219 )
+
+[node name="Arvore8" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 407, 84 )
+
+[node name="Arvore9" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 619, 33 )
+
+[node name="Arvore10" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 547, -190 )
+
+[node name="PedraPequena5" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 608, -84 )
+
+[node name="PedraPequena6" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 239, 26 )
+
+[node name="PedraPequena7" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 283, -152 )
+
+[node name="PedraPequena8" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -62, 232 )
+
+[node name="PedraPequena9" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 351, 213 )
+
+[node name="PedraPequena10" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 139, 125 )
+
+[node name="Arvore11" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -42, -145 )
+
+[node name="TocoArvore4" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 55, -46 )
+
+[node name="TocoArvore5" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 131, -160 )
+
+[node name="TocoArvore6" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 288, -75 )
+
+[node name="TocoArvore7" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 322, 141 )
+
+[node name="TocoArvore8" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 144, 231 )
+
+[node name="TocoArvore9" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 561, 155 )
+
+[node name="TocoArvore10" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -12, 153 )
+
+[node name="TocoArvore11" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 128, 64 )
+
+[node name="TocoArvore12" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -1, -204 )
 
 [node name="LightLabel" type="Label" parent="."]
 margin_right = 40.0
