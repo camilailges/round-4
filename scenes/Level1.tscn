@@ -136,7 +136,7 @@ position = Vector2( 129, -47 )
 position = Vector2( 385, -121 )
 
 [node name="Arvore5" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 34, 255 )
+position = Vector2( 40, 239 )
 
 [node name="Arvore6" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 225, 176 )
