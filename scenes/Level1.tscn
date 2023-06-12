@@ -190,7 +190,7 @@ position = Vector2( -62, 232 )
 position = Vector2( 351, 213 )
 
 [node name="PedraPequena10" parent="YSort" instance=ExtResource( 6 )]
-position = Vector2( 139, 125 )
+position = Vector2( 138, 146 )
 
 [node name="Arvore11" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( -42, -145 )
@@ -227,18 +227,18 @@ margin_right = 40.0
 margin_bottom = 14.0
 
 [node name="RedLightSprite" type="Sprite" parent="LightLabel"]
-position = Vector2( 81, 53 )
-scale = Vector2( 2.0625, 2 )
+position = Vector2( 97.5, 68 )
+scale = Vector2( 3.09375, 2.9375 )
 texture = ExtResource( 10 )
 
 [node name="YellowLightSprite" type="Sprite" parent="LightLabel"]
-position = Vector2( 81, 53 )
-scale = Vector2( 2.0625, 2 )
+position = Vector2( 97.5, 68 )
+scale = Vector2( 3.09375, 2.9375 )
 texture = ExtResource( 9 )
 
 [node name="GreenLightSprite" type="Sprite" parent="LightLabel"]
-position = Vector2( 81, 53 )
-scale = Vector2( 2.09375, 2 )
+position = Vector2( 97.25, 67.5 )
+scale = Vector2( 3.10938, 2.90625 )
 texture = ExtResource( 11 )
 
 [node name="TimeLabel" type="Label" parent="."]
