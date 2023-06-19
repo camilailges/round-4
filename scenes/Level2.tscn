@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/spriteLuzVermelha.png" type="Texture" id=1]
 [ext_resource path="res://scenes/KinematicBody2D.gd" type="Script" id=2]
 [ext_resource path="res://assets/background.png" type="Texture" id=3]
 [ext_resource path="res://assets/pointer.png" type="Texture" id=4]
@@ -17,7 +16,6 @@ texture = ExtResource( 3 )
 [node name="GreenSpot" type="Sprite" parent="KinematicBody2D"]
 position = Vector2( -7.5, 0 )
 scale = Vector2( 2.09375, 2 )
-texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 50, 50 )
 
 [node name="Arrow" type="Sprite" parent="KinematicBody2D"]
