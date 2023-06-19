@@ -1,24 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/KinematicBody2D.gd" type="Script" id=2]
 [ext_resource path="res://assets/background.png" type="Texture" id=3]
 [ext_resource path="res://assets/pointer.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Level2.gd" type="Script" id=5]
 
 [node name="Level2" type="Node2D"]
 position = Vector2( 393, 235 )
+script = ExtResource( 5 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+[node name="Bar" type="KinematicBody2D" parent="."]
 script = ExtResource( 2 )
 
-[node name="BarBackground" type="Sprite" parent="KinematicBody2D"]
+[node name="BarBackground" type="Sprite" parent="Bar"]
 texture = ExtResource( 3 )
 
-[node name="GreenSpot" type="Sprite" parent="KinematicBody2D"]
+[node name="GreenSpot" type="Sprite" parent="Bar"]
 position = Vector2( -7.5, 0 )
 scale = Vector2( 2.09375, 2 )
 region_rect = Rect2( 0, 0, 50, 50 )
 
-[node name="Arrow" type="Sprite" parent="KinematicBody2D"]
+[node name="Arrow" type="Sprite" parent="Bar"]
 position = Vector2( -173, 28 )
 rotation = -1.5708
 scale = Vector2( 1.54392, 1.84649 )

@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 func _on_PlayAgain_pressed() -> void:
-	get_tree().change_scene("res://scenes/Level1.tscn")
+	get_tree().change_scene("res://scenes/Level2.tscn")
 
 
 func _on_Quit_pressed() -> void:
