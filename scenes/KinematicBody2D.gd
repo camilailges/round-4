@@ -28,10 +28,16 @@ func _physics_process(delta):
 
 	if arrow.position.x > rightBoundary:
 		speed = -abs(rand_range(200, 600))
+		if clicou:
+			cliques_restantes -= 1
+			print("Cliques restantes: ", cliques_restantes)
 		clicou = true
 		
 	elif arrow.position.x < leftBoundary:
 		speed = abs(rand_range(200, 600))
+		if clicou:
+			cliques_restantes -= 1
+			print("Cliques restantes: ", cliques_restantes)
 		clicou = true
 
 	var spotPosition = $GreenSpot.position.x
