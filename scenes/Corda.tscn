@@ -37,7 +37,13 @@ tracks/0/keys = {
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 448, 544 )
 texture = ExtResource( 1 )
+offset = Vector2( 80, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
 anims/corda-dir = SubResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 192, 544 )
+texture = ExtResource( 1 )
+offset = Vector2( 80, 0 )
