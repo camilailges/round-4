@@ -117,29 +117,29 @@ func _physics_process(delta):
 
 func animacaoTime1ParaTras():
 	corda.position.x += 15
-	bot3.position.x -= 5
-	bot2.position.x -= 5
-	bot1.position.x -= 5
+	bot3.position.x += 5
+	bot2.position.x += 5
+	bot1.position.x += 5
 
 func animacaoTime2ParaTras():
 	corda.position.x -= 15
-	bot6.position.x += 5
-	bot5.position.x += 5
-	bot4.position.x += 5
+	bot6.position.x -= 5
+	bot5.position.x -= 5
+	bot4.position.x -= 5
 
 func animacaoPerda():
 	if delay_timer > 0.2:
 		corda.position.x -= 200
 	if delay_timer > 0.3:
-		bot6.position.x = 368
+		bot6.position.x = 64
 	if delay_timer > 0.4:
 		bot6.position.y += 10
 	if delay_timer > 0.5:
-		bot5.position.x = 368
+		bot5.position.x = 64
 	if delay_timer > 0.6:
 		bot5.position.y += 10
 	if delay_timer > 0.7:
-		bot4.position.x = 368
+		bot4.position.x = 64
 	if delay_timer > 0.8:
 		bot4.position.y += 10
 		
@@ -147,15 +147,15 @@ func animacaoVitoria():
 	if delay_timer > 0.2:
 		corda.position.x += 200
 	if delay_timer > 0.3:
-		bot3.position.x = -416
+		bot3.position.x = -80
 	if delay_timer > 0.4:
 		bot3.position.y += 10
 	if delay_timer > 0.5:
-		bot2.position.x = -416
+		bot2.position.x = -80
 	if delay_timer > 0.6:
 		bot2.position.y += 10
 	if delay_timer > 0.7:
-		bot1.position.x = -416
+		bot1.position.x = -80
 	if delay_timer > 0.8:
 		bot1.position.y += 10
 		
