@@ -1,24 +1,43 @@
 extends Node2D
 
 var platforms := []
+var platformsState := []
 # Declare member variables here. Examples:
 # var a: int = 2
 # var b: String = "text"
+onready var bridge0: Sprite = get_node("Terrain/Bridge0")
+onready var bridge1: Sprite = get_node("Terrain/Bridge1")
+onready var bridge2: Sprite = get_node("Terrain/Bridge2")
+onready var bridge3: Sprite = get_node("Terrain/Bridge3")
+onready var bridge4: Sprite = get_node("Terrain/Bridge4")
+onready var bridge5: Sprite = get_node("Terrain/Bridge5")
+onready var bridge6: Sprite = get_node("Terrain/Bridge6")
+onready var bridge7: Sprite = get_node("Terrain/Bridge7")
+
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	generate_platforms()
+	platforms.append(bridge0)
+	platforms.append(bridge1)
+	platforms.append(bridge2)
+	platforms.append(bridge3)
+	platforms.append(bridge4)
+	platforms.append(bridge5)
+	platforms.append(bridge6)
+	platforms.append(bridge7)
+	print(platforms.size())
 	print(platforms)
+	print(platformsState)
 	for i in range(platforms.size()):
 		var platform_name = "Bridge" + str(i)
 		var platform_sprite = get_node("Terrain/" + platform_name)
-#		platform_sprite.isSafe = platforms[i]
-		if !platforms[i]:
+		platforms[i].isSafe = platformsState[i]
+		if !platformsState[i]:
 				platform_sprite.set_visible(false)
 		print(platform_name)
-		pass
-	pass # Replace with function body.
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,9 +49,11 @@ func generate_platforms() -> void:
 		var random = randi()
 		print(random)
 		if random % 2 == 1:
-			platforms.append(true)
-			platforms.append(false)
+			platformsState.append(true)
+			platformsState.append(false)
 		else: 
-			platforms.append(false)
-			platforms.append(true)
+			platformsState.append(false)
+			platformsState.append(true)
 	pass
+
+
