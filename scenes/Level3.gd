@@ -13,6 +13,9 @@ func _ready() -> void:
 	for i in range(platforms.size()):
 		var platform_name = "Bridge" + str(i)
 		var platform_sprite = get_node("Terrain/" + platform_name)
+#		platform_sprite.isSafe = platforms[i]
+		if !platforms[i]:
+				platform_sprite.set_visible(false)
 		print(platform_name)
 		pass
 	pass # Replace with function body.
@@ -24,7 +27,9 @@ func _ready() -> void:
 
 func generate_platforms() -> void:
 	for i in range(4):
-		if randi() % 2 == 1:
+		var random = randi()
+		print(random)
+		if random % 2 == 1:
 			platforms.append(true)
 			platforms.append(false)
 		else: 
