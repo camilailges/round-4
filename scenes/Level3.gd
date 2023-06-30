@@ -2,9 +2,8 @@ extends Node2D
 
 var platforms := []
 var platformsState := []
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
+var player : KinematicBody2D
+
 onready var bridge0: Sprite = get_node("Terrain/Bridge0")
 onready var bridge1: Sprite = get_node("Terrain/Bridge1")
 onready var bridge2: Sprite = get_node("Terrain/Bridge2")
@@ -14,10 +13,10 @@ onready var bridge5: Sprite = get_node("Terrain/Bridge5")
 onready var bridge6: Sprite = get_node("Terrain/Bridge6")
 onready var bridge7: Sprite = get_node("Terrain/Bridge7")
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	player = get_node("YSort/Player")
+	
 	generate_platforms()
 	platforms.append(bridge0)
 	platforms.append(bridge1)
@@ -27,22 +26,26 @@ func _ready() -> void:
 	platforms.append(bridge5)
 	platforms.append(bridge6)
 	platforms.append(bridge7)
+
 	print(platforms.size())
 	print(platforms)
 	print(platformsState)
+
 	for i in range(platforms.size()):
 		var platform_name = "Bridge" + str(i)
 		var platform_sprite = get_node("Terrain/" + platform_name)
 		platforms[i].isSafe = platformsState[i]
-#		if !platformsState[i]:
-#				platform_sprite.set_visible(false)
-		print(platform_name)
 
+		if !platformsState[i] && i < platforms.size() - 1:
+			platforms[i].visible = false
 
+	yield(get_tree().create_timer(.5), "timeout")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
+	for i in range(platforms.size()):
+		if !platformsState[i] && i < platforms.size() - 1:
+			platforms[i].visible = true
+
+	print(platformsState)
 
 func generate_platforms() -> void:
 	for _i in range(4):
@@ -54,6 +57,4 @@ func generate_platforms() -> void:
 		else: 
 			platformsState.append(false)
 			platformsState.append(true)
-	pass
-
-
+			
