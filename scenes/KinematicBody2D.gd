@@ -112,7 +112,7 @@ func _physics_process(delta):
 			delay_timer += delta
 			animacaoPerda()
 		else:
-			get_tree().change_scene("res://scenes/WinScreen.tscn")
+			get_tree().change_scene("res://scenes/WinScreenLevel2.tscn")
 			delay_timer = 0
 
 func animacaoTime1ParaTras():
