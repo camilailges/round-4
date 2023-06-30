@@ -15,7 +15,7 @@ onready var bridge7: Sprite = get_node("Terrain/Bridge7")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player = get_node("YSort/Player")
+	player = get_node("Player")
 	
 	generate_platforms()
 	platforms.append(bridge0)
@@ -56,3 +56,7 @@ func generate_platforms() -> void:
 		else:
 			platformsState.append(!platformsState[i - 1])
 			
+func _process(delta: float) -> void:
+	if player.global_position.x > 850:
+		get_tree().change_scene("res://scenes/FinishGameScreen.tscn")
+	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/base_terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+<<<<<<< HEAD:scenes/Level3.tscn
 [ext_resource path="res://assets/iceblocks.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Bridge2.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Bridge7.gd" type="Script" id=5]
@@ -12,6 +13,19 @@
 [ext_resource path="res://Scripts/Bridge3.gd" type="Script" id=10]
 [ext_resource path="res://Scripts/Bridge6.gd" type="Script" id=11]
 [ext_resource path="res://Scripts/Bridge5.gd" type="Script" id=12]
+=======
+[ext_resource path="res://scenes/Level3.gd" type="Script" id=3]
+[ext_resource path="res://scenes/base_terrain.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Bridge0.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Bridge4.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Bridge3.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Bridge6.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Bridge5.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/Bridge1.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/Bridge2.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/Bridge7.gd" type="Script" id=12]
+[ext_resource path="res://assets/level2Background.png" type="Texture" id=13]
+>>>>>>> origin/multipleBots:Level3.tscn
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 24.6813, 72.0525 )
@@ -248,6 +262,12 @@ shape = SubResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/StaticBody2D15"]
 position = Vector2( 775, 171 )
 shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Terrain"]
+position = Vector2( 507, 298 )
+scale = Vector2( 1.86667, 2.38462 )
+z_index = -1
+texture = ExtResource( 13 )
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource( 2 )]
 position = Vector2( 154, 257 )
