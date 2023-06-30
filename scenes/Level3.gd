@@ -45,16 +45,14 @@ func _ready() -> void:
 		if !platformsState[i] && i < platforms.size() - 1:
 			platforms[i].visible = true
 
-	print(platformsState)
+#	print(platformsState)
 
 func generate_platforms() -> void:
-	for _i in range(4):
-		var random = randi()
-		print(random)
-		if random % 2 == 1:
-			platformsState.append(true)
-			platformsState.append(false)
-		else: 
-			platformsState.append(false)
-			platformsState.append(true)
+	var randGen = RandomNumberGenerator.new()
+	randGen.randomize()
+	for i in range(8):
+		if i % 2 == 0:
+			platformsState.append(randGen.randf() > 0.5)
+		else:
+			platformsState.append(!platformsState[i - 1])
 			
