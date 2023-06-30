@@ -33,11 +33,13 @@ var bot3: KinematicBody2D
 var bot4: KinematicBody2D
 var bot5: KinematicBody2D
 
+var boneca: Node2D
+
 var bots := []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_node("YSort/Player")
-	
+	boneca = get_node("Boneca")
 	bot1 = get_node("Navigation2D/GirlBot")
 	bot2 = get_node("Navigation2D/Bot2")
 	bot3 = get_node("Navigation2D/Bot3")
@@ -66,6 +68,8 @@ func _process(delta: float) -> void:
 	update_lights()
 	if not red_light and not yellow_light:
 		green_light_time += delta
+		boneca.animation.play("voltaPosInicial")
+		boneca.animation.set_flip_h(true)
 		
 	if green_light_time >= GREEN_LIGHT_INTERVAL:
 		yellow_light = true
@@ -74,6 +78,7 @@ func _process(delta: float) -> void:
 
 	if yellow_light: 
 		yellow_light_time += delta
+		boneca.animation.play("vira")
 	
 	if yellow_light_time >= YELLOW_LIGHT_INTERVAL:
 		red_light = true
@@ -87,6 +92,8 @@ func _process(delta: float) -> void:
 	
 		
 	if red_light:
+		boneca.animation.play("viradaPraTras")
+		boneca.animation.set_flip_h(false)
 		if player.velocity != null and player.velocity != Vector2.ZERO:
 			get_tree().change_scene("res://scenes/GameOverScreen.tscn")
 		for bot in bots:

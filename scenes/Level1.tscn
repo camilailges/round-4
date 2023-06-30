@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/base_terrain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://scenes/Level1Bots/Bot3.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/Level1Bots/Bot4.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/Level1Bots/Body5.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/Boneca2.tscn" type="PackedScene" id=16]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Finish-Line-PNG-HD.png 0"
@@ -283,3 +284,7 @@ margin_left = 17.0
 margin_top = 9.0
 margin_right = 122.0
 margin_bottom = 28.0
+
+[node name="Boneca" parent="." instance=ExtResource( 16 )]
+position = Vector2( 976, 304 )
+scale = Vector2( 2.5, 2.5 )
