@@ -7,7 +7,7 @@
 [ext_resource path="res://Scripts/Bridge0.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 102.622, 72.0525 )
+extents = Vector2( 98.7254, 72.0525 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 100.024, 72.0526 )
@@ -44,7 +44,7 @@ script = ExtResource( 5 )
 [node name="Area2D" type="Area2D" parent="Terrain/Bridge0"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Bridge0/Area2D"]
-position = Vector2( -1.29901, -1.9472 )
+position = Vector2( -2.59802, 3.89502 )
 shape = SubResource( 5 )
 
 [node name="Bridge1" type="Sprite" parent="Terrain"]
