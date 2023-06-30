@@ -56,3 +56,7 @@ func generate_platforms() -> void:
 		else:
 			platformsState.append(!platformsState[i - 1])
 			
+func _process(delta: float) -> void:
+	if player.global_position.x > 850:
+		get_tree().change_scene("res://scenes/FinishGameScreen.tscn")
+	
